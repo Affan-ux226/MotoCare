@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-motobg: #F4F6F9;
+  --color-motocard: #FFFFFF;
+  --color-motosub: #64748B;
+  --color-mototext: #0F172A;
+  --color-motoborder: #E2E8F0;
+
+  --bg-color: #F4F6F9;
+  --card-color: #FFFFFF;
+  --primary-color: #1677FF;
+  --hover-color: #0D5FD1;
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --success-color: #22C55E;
+  --warn-color: #F59E0B;
+  --danger-color: #EF4444;
+}
+
+.dark {
+  --color-motobg: #0B0D10;
+  --color-motocard: #15191E;
+  --color-motosub: #A7ADB5;
+  --color-mototext: #FFFFFF;
+  --color-motoborder: #1E252D;
+
+  --bg-color: #0B0D10;
+  --card-color: #15191E;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A7ADB5;
+}
+
+@theme {
+  --color-motobg: var(--color-motobg);
+  --color-motocard: var(--color-motocard);
+  --color-motoprimary: #1677FF;
+  --color-motohover: #0D5FD1;
+  --color-motosub: var(--color-motosub);
+  --color-mototext: var(--color-mototext);
+  --color-motosuccess: #22C55E;
+  --color-motowarn: #F59E0B;
+  --color-motodanger: #EF4444;
+
+  --color-blue-400: #1677FF;
+  --color-blue-500: #0D5FD1;
+  --color-blue-600: #1677FF;
+  --color-blue-700: #0D5FD1;
+
+  --color-slate-750: #242C36;
+  --color-slate-850: #181E24;
+
+  --color-emerald-400: #22C55E;
+  --color-emerald-500: #22C55E;
+  --color-green-400: #22C55E;
+  --color-green-500: #22C55E;
+  --color-amber-400: #F59E0B;
+  --color-amber-500: #F59E0B;
+  --color-yellow-400: #F59E0B;
+  --color-yellow-500: #F59E0B;
+  --color-rose-400: #EF4444;
+  --color-rose-500: #EF4444;
+  --color-rose-600: #EF4444;
+  --color-red-400: #EF4444;
+  --color-red-500: #EF4444;
+  --color-red-600: #EF4444;
+}
+
+@layer base {
+  body {
+    font-family: 'Prompt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--color-motobg);
+    color: var(--color-mototext);
+    min-height: 100vh;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Color-scheme for native elements */
+html:not(.dark) {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html:not(.dark) body {
+  background-color: #F4F6F9 !important;
+  color: #0F172A !important;
+}
+
+/* Light mode seamless support for containers and elements */
+html:not(.dark) .bg-\[\#15191E\] {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) .bg-\[\#15191E\]\/95,
+html:not(.dark) .bg-\[\#15191E\]\/90,
+html:not(.dark) .bg-\[\#15191E\]\/80,
+html:not(.dark) .bg-\[\#15191E\]\/70,
+html:not(.dark) .bg-\[\#15191E\]\/60 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) .bg-\[\#0B0D10\] {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) .hover\:bg-\[\#0B0D10\]:hover {
+  background-color: #EEF2F6 !important;
+}
+
+html:not(.dark) .hover\:bg-slate-800:hover {
+  background-color: #F1F5F9 !important;
+}
+
+html:not(.dark) .text-\[\#A7ADB5\] {
+  color: #64748B !important;
+}
+
+html:not(.dark) .text-\[\#FFFFFF\] {
+  color: #0F172A !important;
+}
+
+/* Light mode form controls */
+html:not(.dark) input:not([type="checkbox"]):not([type="radio"]),
+html:not(.dark) textarea,
+html:not(.dark) select {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Microinteraction Utilities & Keyframes */
+@keyframes micro-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+@keyframes micro-shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes micro-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.animate-micro-pulse {
+  animation: micro-pulse 2s infinite ease-in-out;
+}
+
+.animate-micro-shine {
+  animation: micro-shine 2.5s infinite ease-in-out;
+}
+
+.animate-micro-bounce {
+  animation: micro-bounce 0.4s ease-out;
+}
+
+/* Tactile button tap response */
+.touch-tactile {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease;
+}
+.touch-tactile:active {
+  transform: scale(0.96);
+}
+

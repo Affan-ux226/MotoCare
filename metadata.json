@@ -1,0 +1,10 @@
+{
+  "name": "Remix Remix MotoCareV3.2",
+  "description": "แอปพลิเคชันดูแลรถมอเตอร์ไซค์ แจ้งเตือนถ่ายน้ำมันเครื่อง บันทึกเลขไมล์ ประวัติการซ่อม วิเคราะห์กราฟค่าใช้จ่ายรายเดือน และผู้ช่วยช่าง AI ให้คำปรึกษา",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

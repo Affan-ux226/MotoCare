@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="th" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Remix MotoCare</title>
+    <meta name="description" content="แอปพลิเคชันดูแลรถมอเตอร์ไซค์ แจ้งเตือนถ่ายน้ำมันเครื่อง บันทึกเลขไมล์ ประวัติการซ่อม วิเคราะห์กราฟค่าใช้จ่ายรายเดือน และผู้ช่วยช่าง AI ให้คำปรึกษา" />
+    <meta name="theme-color" content="#0B0D10" id="theme-color-meta" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="MotoCare" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:title" content="Remix MotoCare" />
+    <meta property="og:description" content="แอปพลิเคชันดูแลรถมอเตอร์ไซค์ แจ้งเตือนถ่ายน้ำมันเครื่อง บันทึกเลขไมล์ ประวัติการซ่อม วิเคราะห์กราฟค่าใช้จ่ายรายเดือน และผู้ช่วยช่าง AI ให้คำปรึกษา" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('motocare_theme_mode_v2');
+          if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[#F4F6F9] dark:bg-[#0B0D10] text-[#0F172A] dark:text-[#FFFFFF] antialiased font-['Prompt',sans-serif]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
